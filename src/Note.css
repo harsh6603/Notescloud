@@ -1,0 +1,18 @@
+p{
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#option {
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+#card:hover #option {
+    opacity: 1;
+    transition: opacity 0.4s;
+}
+#card:hover{
+    border:1px solid black;
+}
