@@ -1,5 +1,6 @@
 const jwt =require("jsonwebtoken")
-SECRET="swaminarayanNilkanthHariGhanshyam"
+// SECRET="swaminarayanNilkanthHariGhanshyam"
+SECRET = process.env.JWT_SECRET;
 exports.authenticateUser = (req,res,next) => {
     const token=req.header("token");
     if(!token)
@@ -9,6 +10,7 @@ exports.authenticateUser = (req,res,next) => {
     try{
         const check=jwt.verify(token,SECRET);
         req.userID=check.id;
+        req.userName=check.name;
         next();
     }
     catch(err)

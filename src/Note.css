@@ -8,11 +8,38 @@ p{
 #option {
     opacity: 0;
     transition: opacity 0.4s;
+    padding-right:10px;
 }
-#card:hover #option {
+#cards:hover #option {
     opacity: 1;
     transition: opacity 0.4s;
 }
-#card:hover{
-    border:1px solid black;
+/* #card:hover{
+    border:1px solid #efe4e4;
+} */
+
+.setArchive{
+    margin-top:-1%;
+    cursor: pointer;
 }
+
+#cards{
+    border:0;
+    /* border:1px solid white; */
+    /* box-shadow: 0 0 7px 0px rgba(233, 233, 233); */
+}
+
+.card{
+    border:0;
+    /* border:1px solid white; */
+    box-shadow: 0 0 7px 0px rgba(233, 233, 233);
+}
+
+.cardBlack{
+    border:0;
+    background-color: #242526;
+    color: white;
+    box-shadow: 0 0 0px 0px;
+    /* border:1px solid white; */
+}
+

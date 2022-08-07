@@ -20,6 +20,22 @@ const noteSchema = new mongoose.Schema({
     date:{
         type:Date,
         default:Date.now
+    },
+    deleted:{
+        type:Boolean,
+        default:false
+    },
+    restoreDate:{
+        type:Date,
+        default:Date.now  
+    },
+    archive:{
+        type:Boolean,
+        default:false
+    },
+    label:{
+        type:String,
+        default:false
     }
 });
 

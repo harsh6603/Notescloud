@@ -1,0 +1,19 @@
+.container2 {
+    max-width: 1270px;
+    margin: 100px auto;
+}
+textarea::-webkit-scrollbar{
+    width:10px;
+    height:2px;
+}
+textarea::-webkit-scrollbar-track{
+    background:white;
+}
+textarea::-webkit-scrollbar-thumb{
+    background-color:rgb(172,172,172);
+    border-radius:20px;
+}
+
+.centerDelete{
+    padding-top:13%;
+}

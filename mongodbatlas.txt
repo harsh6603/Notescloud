@@ -1,0 +1,1 @@
+mongodb atlas :mongodb+srv://admin:<password>@cluster0.yzudjee.mongodb.net/?retryWrites=true&w=majority
