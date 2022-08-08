@@ -1,5 +1,6 @@
 const noteModel = require("../models/noteModel");
 const { validationResult } = require('express-validator');
+const aws = require('aws-sdk');
 
 exports.readNotes = async (req, res) => {
     try {
@@ -144,4 +145,30 @@ exports.updateManyNotes = async (req,res) => {
         console.log(err);
         res.status(500).send("Some error occure.");
     }
+}
+
+exports.getAwsSignedUrl = (req, res) => {
+    const s3 = new aws.S3();
+    const fileName = req.query['file-name'];
+    const fileType = req.query['file-type'];
+    const s3Params = {
+        Bucket: S3_BUCKET,
+        Key: fileName,
+        Expires: 60,
+        ContentType: fileType,
+        ACL: 'public-read'
+    };
+
+    s3.getSignedUrl('putObject', s3Params, (err, data) => {
+        if (err) {
+            console.log(err);
+            return res.end();
+        }
+        const returnData = {
+            signedRequest: data,
+            url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
+        };
+        res.write(JSON.stringify(returnData));
+        res.end();
+    });
 }

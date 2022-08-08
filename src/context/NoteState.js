@@ -76,8 +76,8 @@ const NoteState = (props) => {
     }
 
     const getNotes = (currentTab) => {
-        const url = `http://192.168.206.178:5000/api/note/readnote?fetch=${currentTab}`;
-        // const url = `http://192.168.206.178:5000/api/note/readnote`;
+        const url = `http://192.168.154.178:5000/api/note/readnote?fetch=${currentTab}`;
+        // const url = `http://192.168.154.178:5000/api/note/readnote`;
         fetch(url, {
             method: "get",
             headers: {
@@ -96,8 +96,8 @@ const NoteState = (props) => {
     }
 
     const getArchiveNotesOfLabel = (currentTab) => {
-        const url = `http://192.168.206.178:5000/api/note/readArchiveNote?fetch=${currentTab}`;
-        // const url = `http://192.168.206.178:5000/api/note/readnote`;
+        const url = `http://192.168.154.178:5000/api/note/readArchiveNote?fetch=${currentTab}`;
+        // const url = `http://192.168.154.178:5000/api/note/readnote`;
         fetch(url, {
             method: "get",
             headers: {
@@ -116,7 +116,7 @@ const NoteState = (props) => {
     }
 
     const addNotes = (noteData,currentTab) => {
-        const url = "http://192.168.206.178:5000/api/note/createnote";
+        const url = "http://192.168.154.178:5000/api/note/createnote";
         fetch(url, {
             method: "post",
             headers: {
@@ -135,7 +135,7 @@ const NoteState = (props) => {
     const updateNote = (updatedData, noteId, currentTab) => {
         console.log(updatedData);
         console.log(noteId);
-        const url = `http://192.168.206.178:5000/api/note/updatenote/${noteId}`;
+        const url = `http://192.168.154.178:5000/api/note/updatenote/${noteId}`;
         fetch(url, {
             method: "PATCH",
             headers: {
@@ -158,7 +158,7 @@ const NoteState = (props) => {
             data:updatedData,
             labelName:labelName
         }
-        const url = `http://192.168.206.178:5000/api/note/updateManyNote`;
+        const url = `http://192.168.154.178:5000/api/note/updateManyNote`;
         fetch(url, {
             method: "PATCH",
             headers: {
@@ -176,7 +176,7 @@ const NoteState = (props) => {
     }
 
     const deleteNote = (noteId,currentTab) => {
-        const url = `http://192.168.206.178:5000/api/note/deletenote/${noteId}`;
+        const url = `http://192.168.154.178:5000/api/note/deletenote/${noteId}`;
         fetch(url, {
             method: "DELETE",
             headers: {
@@ -193,7 +193,7 @@ const NoteState = (props) => {
     }
 
     const addUser = (userData,first,second,third,fourth) => {
-        const url = "http://192.168.206.178:5000/api/user/signup";
+        const url = "http://192.168.154.178:5000/api/user/signup";
         fetch(url, {
             method: "post",
             headers: {
@@ -222,7 +222,7 @@ const NoteState = (props) => {
     }
 
     const loginUser = (loginUserData,first,second) => {
-        const url = "http://192.168.206.178:5000/api/user/login";
+        const url = "http://192.168.154.178:5000/api/user/login";
         fetch(url, {
             method: "post",
             headers: {
@@ -253,7 +253,7 @@ const NoteState = (props) => {
     }
 
     const addUserLabel = (labelName,oldName) => {
-        const url = "http://192.168.206.178:5000/api/user/createLabel";
+        const url = "http://192.168.154.178:5000/api/user/createLabel";
         const lName = {
             labels: labelName,
             oldName:oldName
@@ -276,7 +276,7 @@ const NoteState = (props) => {
     }
 
     const getLabels = () => {
-        const url = "http://192.168.206.178:5000/api/user/getuser";
+        const url = "http://192.168.154.178:5000/api/user/getuser";
         fetch(url, {
             method: "GET",
             headers: {
